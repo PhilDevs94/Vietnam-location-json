@@ -1,42 +1,52 @@
-# Vietnam-location-json
+# Vietnam Location json file
 
-This is the free json file free location in viet nam
 
-cities.js
-district.js
-wards.js
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-Object Structure
-city:
-    {
-       "name": "An Giang",
-        "slug": "an-giang",
-        "type": "tinh",
-        "name_with_type": "Tỉnh An Giang",
-        "code": "89"
-    }
+Json files
 
-district:
+  - cities.json
+  - districts.json
+  - wards.json
+
+# Features!
+
+  - City object structure (key base on code field)
+    ```json
         {
-           "name":"Chợ Đồn",
-           "type":"huyen",
-           "slug":"cho-don",
-           "name_with_type":"Huyện Chợ Đồn",
-           "path":"Chợ Đồn, Bắc Kạn",
-           "path_with_type":"Huyện Chợ Đồn, Tỉnh Bắc Kạn",
-           "code":"064",
-           "parent_code":"06"
+            "name": "An Giang",
+            "slug": "an-giang",
+            "type": "tinh",
+            "name_with_type": "Tỉnh An Giang",
+            "code": "89"
         }
-"parent_code" of district object base on the "code" of city object
-ward: 
-    {
-       "name": "Liêm Thuỷ",
-        "type": "xa",
-        "slug": "liem-thuy",
-        "name_with_type": "Xã Liêm Thuỷ",
-        "path": "Liêm Thuỷ, Na Rì, Bắc Kạn",
-        "path_with_type": "Xã Liêm Thuỷ, Huyện Na Rì, Tỉnh Bắc Kạn",
-        "code": "02197",
-        "parent_code": "066"
-    }
-"parent_code" of ward object base on the "code" of district object
+    ```
+  - District object structure (key base on code field, city reference base on parent_code field )
+    ```json
+        {
+           "name": "Ia H Drai",
+           "type": "huyen",
+           "slug": "ia-h-drai",
+           "name_with_type": "Huyện Ia H Drai",
+           "path": "Ia H Drai, Kon Tum",
+           "path_with_type": "Huyện Ia H Drai, Tỉnh Kon Tum",
+           "code": "618",
+           "parent_code": "62"
+        }
+    ```
+  - Ward object structure(key base on code field, districty reference base on parent_code field)
+    ```json
+        {
+            "name": "Đổng Xá",
+            "type": "xa",
+            "slug": "dong-xa",
+            "name_with_type": "Xã Đổng Xá",
+            "path": "Đổng Xá, Na Rì, Bắc Kạn",
+            "path_with_type": "Xã Đổng Xá, Huyện Na Rì, Tỉnh Bắc Kạn",
+            "code": "02194",
+            "parent_code": "066"
+        }
+    ```
+
+**Free files, Hell Yeah!**
+
